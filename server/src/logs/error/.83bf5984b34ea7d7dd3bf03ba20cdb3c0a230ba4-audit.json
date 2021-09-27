@@ -1,0 +1,14 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\alexe\\work\\quasar\\phone-vue3-quasar2-apollo4\\server\\src\\logs\\error\\.83bf5984b34ea7d7dd3bf03ba20cdb3c0a230ba4-audit.json",
+    "files": [
+        {
+            "date": 1632751692326,
+            "name": "C:\\Users\\alexe\\work\\quasar\\phone-vue3-quasar2-apollo4\\server\\src\\logs\\error\\27.09.2021.log",
+            "hash": "e84dafd4ccc4f9ae77d924b49b8541d7"
+        }
+    ]
+}
