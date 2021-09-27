@@ -1,2 +1,32 @@
-27.09.2021 19:32:01 info: ======= ENV: development =======
-27.09.2021 19:32:01 info: 🚀 Exoree started on port: 4002
+27.09.2021 23:14:51 info: ========> ENV: development <=======
+27.09.2021 23:14:51 info: 🚀 Expreess server started on port: 4002
+27.09.2021 23:14:51 info: 🎉 Mongo connected mongodb://localhost:27017/phones
+27.09.2021 23:16:43 info: ========> ENV: development <=======
+27.09.2021 23:16:43 info: 🚀 Expreess server started on port: 4002
+27.09.2021 23:16:43 info: 🎉 Mongo connected mongodb://localhost:27017/phones
+27.09.2021 23:17:26 info: ========> ENV: development <=======
+27.09.2021 23:17:26 info: 🚀 Expreess server started on port: 4002
+27.09.2021 23:17:26 info: 🎉 Mongo connected mongodb://localhost:27017/phones
+27.09.2021 23:19:34 info: ========> ENV: development <=======
+27.09.2021 23:19:34 info: 🚀 Expreess server started on port: 4002
+27.09.2021 23:19:34 info: 🎉 Mongo connected mongodb://localhost:27017/phones
+27.09.2021 23:23:39 info: ========> ENV: development <=======
+27.09.2021 23:23:39 info: 🚀 Expreess server started on port: 4002
+27.09.2021 23:23:39 info: 🎉 Mongo connected mongodb://localhost:27017/phones
+27.09.2021 23:26:30 info: ========> ENV: development <=======
+27.09.2021 23:26:30 info: 🚀 Expreess server started on port: 4002
+27.09.2021 23:26:30 info: 🎉 Mongo connected mongodb://localhost:27017/phones
+27.09.2021 23:28:15 info: ========> ENV: development <=======
+27.09.2021 23:28:15 info: 🚀 Expreess server started on port: 4002
+27.09.2021 23:28:15 info: 🎉 Mongo connected mongodb://localhost:27017/phones
+27.09.2021 23:29:16 info: ========> ENV: development <=======
+27.09.2021 23:29:16 info: 🚀 Expreess server started on port: 4002
+27.09.2021 23:29:16 info: 🎉 Mongo connected mongodb://localhost:27017/phones
+27.09.2021 23:30:59 info: ========> ENV: development <=======
+27.09.2021 23:30:59 info: 🚀 Expreess server started on port: 4002
+27.09.2021 23:30:59 info: 🎉 Mongo connected mongodb://localhost:27017/phones
+27.09.2021 23:31:01 info: GET / 304 - 11.403 ms
+27.09.2021 23:33:10 info: ========> ENV: development <=======
+27.09.2021 23:33:10 info: 🚀 Expreess server started on port: 4002
+27.09.2021 23:33:10 info: 🎉 Mongo connected mongodb://localhost:27017/phones
+27.09.2021 23:36:03 error: GET /1 404 - 14.499 ms - message: -

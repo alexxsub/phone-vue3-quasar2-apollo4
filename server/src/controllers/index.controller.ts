@@ -1,13 +1,13 @@
-import { NextFunction, Request, Response } from 'express';
+import { Request, Response } from 'express'
+import httpStatus from 'http-status'
+import asyncHandler from '@utils/asyncHandler'
 
 class IndexController {
-  public index = (req: Request, res: Response, next: NextFunction) => {
-    try {
-      res.sendStatus(200);
-    } catch (error) {
-      next(error);
-    }
-  };
+  public index = asyncHandler((req: Request, res: Response) => {
+
+       res.status(httpStatus.OK).send('Express works!')
+  
+})
 }
 
-export default IndexController;
+export default IndexController
