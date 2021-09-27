@@ -20,6 +20,7 @@
     "resolveJsonModule": true,
     "importHelpers": true,
     "baseUrl": "src",
+    "skipLibCheck": true,
     "paths": {
       "@/*": ["*"],
       "@controllers/*": ["controllers/*"],
@@ -34,6 +35,6 @@
       "@utils/*": ["utils/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.json", ".env"],
+  "include": ["src/**/*.ts", "src/**/*.json", ".env", "jest.config.js"],
   "exclude": ["node_modules"]
 }

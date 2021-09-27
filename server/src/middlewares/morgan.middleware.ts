@@ -8,12 +8,12 @@ const getIpFormat = () => (process.env.NODE_ENV === 'production' ? ':remote-addr
 const successResponseFormat = `${getIpFormat()}:method :url :status - :response-time ms`
 const errorResponseFormat = `${getIpFormat()}:method :url :status - :response-time ms - message: :message`
 
-export const successHandler = morgan(successResponseFormat, {
+export const successLog = morgan(successResponseFormat, {
   skip: (req: Request, res: Response) => res.statusCode >= 400,
   stream: { write: (message: string) => logger.info(message.trim()) },
 })
 
-export const errorHandler = morgan(errorResponseFormat, {
+export const errorLog = morgan(errorResponseFormat, {
   skip: (req: Request, res: Response) => res.statusCode < 400,
   stream: { write: (message: string) => logger.error(message.trim()) },
 })

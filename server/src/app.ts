@@ -1,19 +1,24 @@
 process.env['NODE_CONFIG_DIR'] = __dirname + '/configs'
 
+
+import config from 'config'
+import path from 'path'
+import express from 'express'
+// middlewares modules
 import compression from 'compression'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
-import config from 'config'
-import express from 'express'
 import helmet from 'helmet'
 import hpp from 'hpp'
 //import morgan from 'morgan'
-import { errorHandler as morganErrorHandler, successHandler } from '@/middlewares/morgan.middleware'
-import { connect,set } from 'mongoose'
-import { dbConnection } from 'databases'
+
+import { errorLog, successLog } from '@/middlewares/morgan.middleware'
+import { connect,disconnect,set } from 'mongoose'
+import { dbConnection } from '@/databases'
 import { Routes } from '@interfaces/routes.interface'
 import errorMiddleware from '@middlewares/error.middleware'
 import { logger, stream } from '@utils/logger'
+
 
 class App {
   public app: express.Application
@@ -48,6 +53,12 @@ class App {
     connect(dbConnection.url, dbConnection.options)
     .then(() => logger.info(`🎉 Mongo connected ${dbConnection.url}`))
     .catch((err) => console.error(err))
+    .then(()=>disconnect())
+ 
+  }
+
+  public disconnectDatabase(){
+    disconnect()
   }
 
   private initializeMiddlewares() {
@@ -68,8 +79,7 @@ class App {
         tokens['response-time'](req, res), 'ms'
       ].join(' ')
     }))*/
-    this.app.use(successHandler)
-    this.app.use(morganErrorHandler)
+    
     this.app.use(cors({ origin: config.get('cors.origin'), credentials: config.get('cors.credentials') }))//for Cross-origin resource sharing
     this.app.use(hpp()) // to protect against HTTP Parameter Pollution attacks
     this.app.use(helmet())// helps you secure your Express apps by setting various HTTP headers
@@ -77,6 +87,9 @@ class App {
     this.app.use(express.json())// for parsing application/json
     this.app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
     this.app.use(cookieParser())//Parse Cookie header and populate req.cookies with an object keyed by the cookie names
+    this.app.use(express.static(path.join(__dirname, 'public')))
+    this.app.use(successLog) // morgan success logger
+    this.app.use(errorLog) // morgan error logger
   }
   
   //routes
@@ -88,9 +101,11 @@ class App {
 
  //error handlers
   private initializeErrorHandling() {
-    
     this.app.use(errorMiddleware)
   }
 }
+
+
+
 
 export default App
